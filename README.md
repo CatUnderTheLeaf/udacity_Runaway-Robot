@@ -41,6 +41,9 @@ YOUR JOB:
 Complete the estimate_next_pos function. You will probably want to use
 the OTHER variable to keep track of information about the runaway robot.
 
+SOLUTION:
+As it is the simplest case we need only three measurements to find heading and turning angle. Using only these two angles we can calculate the next position.
+
 ----------
 PART TWO
 
@@ -54,7 +57,10 @@ for the robot's next position.
 YOUR JOB:
 Complete the function estimate_next_pos. You will be considered 
 correct if your estimate is within 0.01 stepsizes of Traxbot's next
-true position. 
+true position.
+
+SOLUTION:
+After adding noise we need to calculate average distance between measurements and average turning angle. With particle filter we create lots of particles to calculate an average next_position.
 
 ----------
 PART THREE
@@ -76,6 +82,9 @@ Your function will return the amount you want your bot to turn, the
 distance you want your bot to move, and the OTHER variable, with any
 information you want to keep track of.
 
+SOLUTION:
+Used the same code as for part two, but added movement of hunter bot. As the hunter bot moves faster than the runaway bot the heading of the hunter is just the next estimation position.
+
 ----------
 PART FOUR
 
@@ -85,6 +94,9 @@ This may require more careful planning than you used last time.
 
 YOUR JOB:
 Complete the next_move function, similar to how you did last time. 
+
+SOLUTION:
+The speed of the hunter is the same as the runaway bot, so we need to implement some plan of chase. We predict max 100 next positions in circular motion and choose one point as our heading which takes equal steps both for the hunter and runaway bots.
 
 ----------
 PART FIVE
